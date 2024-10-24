@@ -49,4 +49,12 @@ public class InputManagerScript : MonoBehaviour
     {
         return playerControls.Player.Jump.triggered;
     }
+    public bool PlayerShot()
+    {
+        return playerControls.Player.Shoot.triggered;
+    }
+    public bool PlayerReload()
+    {
+        return playerControls.Player.Reload.triggered;
+    }
 }
