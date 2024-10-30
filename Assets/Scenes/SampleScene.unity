@@ -596,6 +596,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.034
       objectReference: {fileID: 0}
+    - target: {fileID: 4100614335186672620, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100614335186672620, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111456235259288135, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111456235259288135, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4122651086887805332, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -636,10 +652,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5373051236970884232, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373051236970884232, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373051236970884232, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778521745732251797, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8340077399063187807, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8380943244671586404, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 8380943244671586404, guid: 28ca2f6cca052e646bb35a6a23b75ece, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
