@@ -22,8 +22,8 @@ public class Target : MonoBehaviour, IDamageable
     {
         health += healAmount;
     }
-    public void setHealth(float health)
+    public void setHealth(float healthMax)
     {
-        health = health;
+        health = healthMax;
     }
 }
