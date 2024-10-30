@@ -14,4 +14,8 @@ public class Target : MonoBehaviour, IDamageable
             Destroy(gameObject);
         }
     }
+    public float returnHealth()
+    {
+        return health;
+    }
 }

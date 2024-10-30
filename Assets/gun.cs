@@ -51,6 +51,7 @@ public class gun : MonoBehaviour
         else
         {
             Debug.Log("Out of Ammo");
+            StartReload();
         }
     }
 

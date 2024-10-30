@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float playerSpeed = 2.0f;
     [SerializeField] float jumpHeight = 1.0f;
     [SerializeField] float gravityValue = -9.81f;
+    [SerializeField] Target target;
     private InputManagerScript inputManager;
     private Transform cameraTransform;
     [SerializeField] Camera main;
