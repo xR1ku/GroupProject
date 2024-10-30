@@ -28,7 +28,7 @@ public class UIScript : MonoBehaviour
     {
         currentHealth = target.returnHealth();
         currentAmmo = gunData.currentAmmo;
-        maxAmmo = gunData.magSize;
+        maxAmmo = gunData.totalAmmo;
         finalText = currentAmmo.ToString() + "/" + maxAmmo.ToString();
         ammoCount.text = finalText;
         healthBar.value = currentHealth;

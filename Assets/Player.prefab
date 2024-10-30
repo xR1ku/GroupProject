@@ -1260,6 +1260,7 @@ MonoBehaviour:
   jumpHeight: 1
   gravityValue: -9.81
   target: {fileID: 8120925587637964563}
+  gunData: {fileID: 11400000, guid: b07db7b6ec1e60941ab1da0761330e56, type: 2}
   main: {fileID: 3142343469594477670}
 --- !u!143 &6335877743798116956
 CharacterController:

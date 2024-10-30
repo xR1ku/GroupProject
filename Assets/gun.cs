@@ -74,8 +74,25 @@ public class gun : MonoBehaviour
         Debug.Log("reloading");
 
         yield return new WaitForSeconds(gunData.reloadTime);
-
-        gunData.currentAmmo = gunData.magSize;
+        if (gunData.totalAmmo >= gunData.magSize && gunData.currentAmmo == 0)
+        {
+            gunData.currentAmmo = gunData.magSize;
+            gunData.totalAmmo = gunData.totalAmmo - gunData.magSize;
+        }
+        else if (gunData.totalAmmo >= gunData.magSize && gunData.currentAmmo != 0)
+        {
+            gunData.totalAmmo = gunData.totalAmmo - (gunData.magSize - gunData.currentAmmo);
+            gunData.currentAmmo = gunData.magSize;
+        }
+        else if(gunData.totalAmmo < gunData.magSize && gunData.totalAmmo > 0)
+        {
+            gunData.currentAmmo = gunData.totalAmmo;
+            gunData.totalAmmo = 0;
+        }
+        if(gunData.totalAmmo <= 0)
+        {
+            gunData.totalAmmo = 0;
+        }
 
         gunData.reloading = false;
         Debug.Log("reloaded");
