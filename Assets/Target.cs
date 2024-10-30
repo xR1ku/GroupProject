@@ -18,4 +18,12 @@ public class Target : MonoBehaviour, IDamageable
     {
         return health;
     }
+    public void Heal(float healAmount)
+    {
+        health += healAmount;
+    }
+    public void setHealth(float health)
+    {
+        health = health;
+    }
 }

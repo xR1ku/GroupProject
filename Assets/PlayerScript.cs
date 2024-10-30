@@ -25,6 +25,9 @@ public class PlayerScript : MonoBehaviour
         controller = GetComponent<CharacterController>();
         inputManager = InputManagerScript.Instance;
         cameraTransform = main.transform;
+        target.setHealth(100);
+        gunData.totalAmmo = gunData.maxAmmo;
+        gunData.currentAmmo = gunData.magSize;
     }
 
     void Update()
@@ -60,6 +63,17 @@ public class PlayerScript : MonoBehaviour
             gunData.totalAmmo = gunData.maxAmmo;
             Destroy(other.gameObject);
             Debug.Log("ammo gained");
+        }
+        else if(other.gameObject.tag == "Health")
+        {
+            target.Heal(50);
+            Destroy(other.gameObject);
+            Debug.Log("Healed");
+        }
+        else if(other.gameObject.tag == "Damage")
+        {
+            target.Damage(20);
+            Debug.Log("damaged");
         }
     }
 }
