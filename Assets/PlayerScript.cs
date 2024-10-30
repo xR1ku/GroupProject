@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 [RequireComponent(typeof(CharacterController))]
 public class PlayerScript : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float playerSpeed = 2.0f;
     [SerializeField] float jumpHeight = 1.0f;
     [SerializeField] float gravityValue = -9.81f;
+    [SerializeField] Target target;
+    [SerializeField] GunData gunData;
     private InputManagerScript inputManager;
     private Transform cameraTransform;
     [SerializeField] Camera main;
@@ -22,6 +25,9 @@ public class PlayerScript : MonoBehaviour
         controller = GetComponent<CharacterController>();
         inputManager = InputManagerScript.Instance;
         cameraTransform = main.transform;
+        target.setHealth(100);
+        gunData.totalAmmo = gunData.maxAmmo;
+        gunData.currentAmmo = gunData.magSize;
     }
 
     void Update()
@@ -50,4 +56,24 @@ public class PlayerScript : MonoBehaviour
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Ammo")
+        {
+            gunData.totalAmmo = gunData.maxAmmo;
+            Destroy(other.gameObject);
+            Debug.Log("ammo gained");
+        }
+        else if(other.gameObject.tag == "Health")
+        {
+            target.Heal(50);
+            Destroy(other.gameObject);
+            Debug.Log("Healed");
+        }
+        else if(other.gameObject.tag == "Damage")
+        {
+            target.Damage(20);
+            Debug.Log("damaged");
+        }
+    }
 }

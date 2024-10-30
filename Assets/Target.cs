@@ -14,4 +14,16 @@ public class Target : MonoBehaviour, IDamageable
             Destroy(gameObject);
         }
     }
+    public float returnHealth()
+    {
+        return health;
+    }
+    public void Heal(float healAmount)
+    {
+        health += healAmount;
+    }
+    public void setHealth(float health)
+    {
+        health = health;
+    }
 }

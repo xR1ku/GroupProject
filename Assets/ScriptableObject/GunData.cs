@@ -19,4 +19,6 @@ public class GunData : ScriptableObject
     public float fireRate;
     public float reloadTime;
     public bool reloading;
+    public int totalAmmo;
+    public int maxAmmo;
 }
