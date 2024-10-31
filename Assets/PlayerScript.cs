@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
+using Cinemachine;
+using UnityEngine.UI;
+using TMPro;
 
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : NetworkBehaviour
 {
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -15,10 +19,26 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float gravityValue = -9.81f;
     [SerializeField] Target target;
     [SerializeField] GunData gunData;
+    [SerializeField] CinemachineVirtualCamera vc;
+    [SerializeField] AudioListener listener;
     private InputManagerScript inputManager;
     private Transform cameraTransform;
     [SerializeField] Camera main;
+    [SerializeField] Slider healthBar;
 
+    public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
+        {
+            healthBar.enabled = true;
+            listener.enabled = true;
+            vc.Priority = 1;
+        }
+        else
+        {
+            vc.Priority = 0;
+        }
+    }
 
     private void Start()
     {
@@ -28,6 +48,7 @@ public class PlayerScript : MonoBehaviour
         target.setHealth(100);
         gunData.totalAmmo = gunData.maxAmmo;
         gunData.currentAmmo = gunData.magSize;
+        gunData.reloading = false;
     }
 
     void Update()

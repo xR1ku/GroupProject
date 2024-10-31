@@ -16,8 +16,6 @@ public class UIScript : MonoBehaviour
     [SerializeField] GunData gunData;
     string finalText;
 
-
-
     void Start()
     {
 
